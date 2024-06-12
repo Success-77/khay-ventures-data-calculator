@@ -1,2 +1,3 @@
-# khay-ventures-data-calculator
-A little project to support a data reselling business
+# Basic Sales Calculator for Data agents
+
+Built on React + vite with simple and user friendly interface.
