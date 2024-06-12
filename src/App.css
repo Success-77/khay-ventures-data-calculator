@@ -12,36 +12,6 @@
   width: 60%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Navbar Styles */
 .navbar {
   font-family: "Montserrat", sans-serif;
@@ -117,14 +87,6 @@
   margin: auto;
 }
 
-.input-sales label {
-  display: block;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: bold;
-}
-
 .sales-header {
   width: 60%;
   display: flex;
@@ -151,6 +113,7 @@
 }
 
 .copy {
+  width: 7rem;
   height: 2.5rem;
   border-radius: 5px;
   border: none;
@@ -173,6 +136,7 @@
   text-transform: uppercase;
   font-size: medium;
   color: #282c34;
+  padding: 0.3rem;
 }
 
 .copy:hover {
@@ -268,7 +232,6 @@
     font-size: small;
   }
   .copy {
-    width: 35%;
     font-size: medium;
   }
 
@@ -303,9 +266,13 @@
     margin: 2rem auto;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 2rem 4rem;
+    padding: 2rem;
     border-radius: 12px;
     color: #282c34;
+  }
+
+  .input-sales {
+    width: 100%;
   }
 
   .brand-name h3 {
