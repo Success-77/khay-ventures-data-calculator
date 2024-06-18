@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yanone+Kaffeesatz:wght@200..700&display=swap");
-
 .App {
   box-sizing: border-box;
   margin: 0;
@@ -7,60 +5,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.Home {
-  margin: auto;
-  width: 60%;
-}
-
-/* Navbar Styles */
-.navbar {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  background-color: transparent;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 3rem;
-  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.19);
-}
-
-.navbar nav {
-  width: 30%;
-}
-.navbar nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.list-item Link {
-  text-decoration: none;
-  color: black;
-}
-
-.list-item Link:hover {
-  color: powderblue;
-  transition: 0.5s;
-}
-
-/* Homepage Styles */
-.form,
-.payment {
-  width: 60%;
-  margin: 4rem auto;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 2rem 4rem;
-  border-radius: 12px;
-  color: #282c34;
-}
-
-.payment {
-  text-transform: uppercase;
-  font-size: small;
-  line-height: 2;
-}
 .home-header {
   font-weight: 900;
   font-size: xx-large;
@@ -70,78 +14,6 @@
   font-optical-sizing: auto;
   font-style: normal;
   margin: 5rem auto;
-}
-.sub-header {
-  font-weight: 900;
-  font-size: large;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  margin: 0 auto;
-}
-
-.input-sales {
-  width: 90%;
-  margin: auto;
-}
-
-.sales-header {
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  text-transform: uppercase;
-}
-
-.sales-header span {
-  border-bottom: 2px solid black;
-  margin-bottom: 1rem;
-  font-size: large;
-  font-weight: 700;
-}
-
-#floatingInput {
-  margin: 0;
-}
-
-.submit-button {
-  width: 90%;
-  margin: auto;
-  text-align: center;
-}
-
-.copy {
-  width: 7rem;
-  height: 2.5rem;
-  border-radius: 5px;
-  border: none;
-  margin: 2rem auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 2rem;
-}
-.copy img {
-  width: 30px;
-  background-color: transparent;
-  padding: 0.3rem;
-}
-.copy span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: medium;
-  color: #282c34;
-  padding: 0.3rem;
-}
-
-.copy:hover {
-  transition: 0.3s;
-  opacity: 0.6;
 }
 
 .tabs {
@@ -190,23 +62,6 @@
   font-weight: 600;
 }
 
-.totalAmt {
-  margin: 1rem auto;
-}
-
-.guide {
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-}
-.small-text {
-  font-size: medium;
-  margin-bottom: 2rem;
-}
-.error {
-  color: red;
-  margin: 0;
-}
-
 @media screen and (max-width: 768px) {
   .Home {
     width: 95%;
@@ -214,25 +69,6 @@
 
   .home-header {
     font-size: larger;
-  }
-
-  .sub-header {
-    margin: 2rem 0;
-    font-size: large;
-  }
-  #floatingInput {
-    font-size: small;
-  }
-
-  .input-sales label {
-    font-size: small;
-  }
-
-  .small-text {
-    font-size: small;
-  }
-  .copy {
-    font-size: medium;
   }
 
   .tabs {
@@ -253,30 +89,6 @@
   .tab-clicked {
     margin: 0 auto;
     transition: margin 2s ease-in-out; /* Add transition for margin */
-  }
-
-  .sales-header {
-    width: 80%;
-    margin: 1rem auto;
-  }
-
-  .form,
-  .payment {
-    width: 80%;
-    margin: 2rem auto;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 2rem;
-    border-radius: 12px;
-    color: #282c34;
-  }
-
-  .input-sales {
-    width: 100%;
-  }
-
-  .brand-name h3 {
-    font-size: medium;
   }
 
   .active {

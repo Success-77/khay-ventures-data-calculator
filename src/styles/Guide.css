@@ -1,0 +1,137 @@
+.home-guide {
+  margin: 2rem auto;
+  padding: 1rem 0;
+  width: 60%;
+}
+
+.tabs {
+  flex-wrap: wrap;
+}
+.tab-button {
+  width: 12rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  background-color: #282c34;
+  color: white;
+  font-size: medium;
+  margin: 1rem auto;
+}
+
+/* Video Guide */
+.video-guide {
+  width: 100%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+
+.video-container {
+  padding: 0 1rem;
+  border: 2px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  margin: auto;
+}
+
+.video-container video {
+  height: 80vh;
+}
+
+.video-description {
+  width: 20rem;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .home-guide {
+    width: 90%;
+  }
+
+  .tab-button {
+    margin: 0.5rem auto;
+  }
+
+  .video-container {
+    width: 90%;
+    padding: 0 2rem;
+  }
+
+  .video-container video {
+    width: 100%;
+  }
+  .video-description {
+    width: 24rem;
+  }
+}
+
+/* Step by step guide */
+
+/* Image Guide */
+.image-guide h3 {
+  width: 90%;
+  margin: 1rem;
+}
+.image-guide figure {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.image-guide img {
+  width: 100%;
+}
+
+.image-guide figcaption {
+  text-align: justify;
+  margin: 1rem;
+}
+
+/* Main */
+.step-by-step-guide {
+  margin: 3rem auto;
+}
+.guide-header {
+  width: 80%;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+.image-guides {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.single-image-guide {
+  width: 30%;
+  min-width: 15rem;
+  margin: 3rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .step-by-step-guide {
+    width: 100%;
+    padding: 0;
+    margin: 1.5rem auto;
+  }
+  .image-guides {
+    width: 90%;
+    margin: auto;
+  }
+
+  .single-image-guide {
+    min-width: unset;
+    width: 100%;
+  }
+}
