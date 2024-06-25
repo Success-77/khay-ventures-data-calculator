@@ -5,22 +5,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.home-header {
-  font-weight: 900;
-  font-size: xx-large;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  margin: 5rem auto;
-}
-
 .tabs {
-  width: 60%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 8rem auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .tab-button {
@@ -30,29 +20,25 @@
   background-color: #282c34;
   color: white;
   font-size: medium;
+  margin: 0 2rem;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 .tab-button:hover {
   background-color: transparent;
-  border: none;
-  color: black;
-  background-color: transparent;
-  font-weight: 600;
   border: 2px solid #282c34;
-}
-
-.remove {
-  display: none;
+  color: black;
+  font-weight: 600;
 }
 
 .tab-clicked {
-  margin: 2rem auto;
-  transition: margin 2s ease-in-out; /* Add transition for margin */
+  height: 8rem; /* Initial height */
+  margin: 0;
+  transition: height 2s ease-in-out, margin 0.5s ease-in-out; /* Smooth transition for height and margin */
 }
 
-.move-header {
-  margin: 2rem auto 1rem;
-  transition: margin 2s ease-in-out; /* Add transition for margin */
+.move-tab-content {
+  margin: 0;
 }
 
 .active {
@@ -63,32 +49,20 @@
 }
 
 @media screen and (max-width: 768px) {
-  .Home {
+  .App {
     width: 95%;
   }
 
-  .home-header {
-    font-size: larger;
-  }
-
-  .tabs {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   .tab-button {
-    width: 100%;
+    width: 37%;
     border: none;
     font-size: medium;
-    margin: 1rem auto;
+    margin: 0 1rem;
   }
 
   .tab-clicked {
     margin: 0 auto;
-    transition: margin 2s ease-in-out; /* Add transition for margin */
+    /* transition: margin 2s ease-in-out; */
   }
 
   .active {

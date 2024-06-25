@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from "react";
-import copyIcon from "../assets/images/copy.png";
-import "../styles/Calculate.css";
+import copyIcon from "../../../assets/images/copy.png";
+import {
+  gigFormatter,
+  amounts,
+  replaceUndefinedWithQuestionMark,
+} from "../../shared/utilities/formatters";
+import PaymentDetails from "../../shared/components/PaymentDetails";
+import AllInput from "./AllInput";
 
 const serverDetails = {
   number: "0557623571",
   momoName: "Michael Abban",
 };
-
-function gigFormatter(packages) {
-  return packages.map((pack) => pack + "GB");
-}
-
-function amounts(dictionary, packages) {
-  return packages.map((pack) => dictionary[parseInt(pack)]);
-}
-
-function replaceUndefinedWithQuestionMark(allPrices) {
-  return allPrices.map((price) => (price === undefined ? "?" : price));
-}
 
 const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
   const [mtnInputValue, setMTNInputValue] = useState("");
@@ -54,20 +48,19 @@ const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
     vodaPrices,
   ]);
 
-  const handleInputChange = (event, setNetworkValue, setInputError) => {
-    const networkValue = event.target.value;
+  const handleInputChange = (value, setValue, setError) => {
     const validInputRegex = /^[0-9+\s]*$/;
 
-    if (validInputRegex.test(networkValue)) {
-      setNetworkValue(networkValue);
-      setInputError("");
+    if (validInputRegex.test(value)) {
+      setValue(value);
+      setError("");
     } else {
-      setInputError("Invalid input!");
+      setError("Invalid input!");
     }
   };
 
-  const handleInputBlur = (setInputError) => {
-    setInputError("");
+  const handleInputBlur = (setError) => {
+    setError("");
   };
 
   const handleCopyToClipboard = () => {
@@ -96,18 +89,6 @@ const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
         }, 1500);
       })
       .catch((err) => console.error("Failed to copy:", err));
-  };
-
-  const copyMomoNumber = () => {
-    navigator.clipboard
-      .writeText(serverDetails.number)
-      .then(() => {
-        setIsCopied(true);
-        setTimeout(() => {
-          setIsCopied(false);
-        }, 1500);
-      })
-      .catch((err) => console.error("Copy failed!", err));
   };
 
   const tabularFormat = (packages, allPrices) => {
@@ -178,10 +159,6 @@ const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
     return output;
   }
 
-  const phoneNumberHashing = (phone) => {
-    return `+233*******${phone.slice(-2)}`;
-  };
-
   return (
     <div className="main-container">
       <div className="packs-prices">
@@ -192,69 +169,39 @@ const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
                 Enter packages separating each with a space or the plus sign [ +
                 ]
               </p>
-              <div className="input-field">
-                <div className="form-floating mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="floatingInput"
-                    placeholder="10 + 7 9 + 6 4"
-                    value={mtnInputValue}
-                    onChange={(event) =>
-                      handleInputChange(
-                        event,
-                        setMTNInputValue,
-                        setMTNInputError
-                      )
-                    }
-                    onBlur={() => handleInputBlur(setMTNInputError)}
-                  />
-                  <label htmlFor="floatingInput">Enter MTN Packages</label>
-                </div>
-                {mtnInputError && (
-                  <p className="error guide">{mtnInputError}</p>
-                )}
-              </div>
-              <div className="input-field">
-                <div className="form-floating mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="floatingInput"
-                    placeholder="10 + 7 9 + 6 4"
-                    value={atInputValue}
-                    onChange={(event) =>
-                      handleInputChange(event, setATInputValue, setATInputError)
-                    }
-                    onBlur={() => handleInputBlur(setATInputError)}
-                  />
-                  <label htmlFor="floatingInput">Enter AT Packages</label>
-                </div>
-                {atInputError && <p className="error guide">{atInputError}</p>}
-              </div>
-              <div className="input-field">
-                <div className="form-floating mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="floatingInput"
-                    placeholder="10 + 7 9 + 6 4"
-                    value={vodaInputValue}
-                    onChange={(event) =>
-                      handleInputChange(
-                        event,
-                        setVodaInputValue,
-                        setVodaInputError
-                      )
-                    }
-                    onBlur={() => handleInputBlur(setVodaInputError)}
-                  />
-                  <label htmlFor="floatingInput">Enter Vodafone Packages</label>
-                </div>
-                {vodaInputError && (
-                  <p className="error guide">{vodaInputError}</p>
-                )}
-              </div>
+              <AllInput
+                placeholder="10 + 7 9 + 6 4"
+                id="mtnInput"
+                value={mtnInputValue}
+                onChange={(value) =>
+                  handleInputChange(value, setMTNInputValue, setMTNInputError)
+                }
+                onBlur={() => handleInputBlur(setMTNInputError)}
+                errorMessage={mtnInputError}
+                label="Enter MTN Packages"
+              />
+              <AllInput
+                placeholder="10 + 7 9 + 6 4"
+                id="atInput"
+                value={atInputValue}
+                onChange={(value) =>
+                  handleInputChange(value, setATInputValue, setATInputError)
+                }
+                onBlur={() => handleInputBlur(setATInputError)}
+                errorMessage={atInputError}
+                label="Enter AT Packages"
+              />
+              <AllInput
+                placeholder="10 + 7 9 + 6 4"
+                id="vodaInput"
+                value={vodaInputValue}
+                onChange={(value) =>
+                  handleInputChange(value, setVodaInputValue, setVodaInputError)
+                }
+                onBlur={() => handleInputBlur(setVodaInputError)}
+                errorMessage={vodaInputError}
+                label="Enter Vodafone Packages"
+              />
             </div>
           </div>
 
@@ -266,26 +213,11 @@ const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
                 <span>Copy</span>
               </button>
             )}
-            {isCopied && <p>copied!</p>}
+            {isCopied && <p className="copied">copied!</p>}
           </div>
         </div>
       </div>
-      <div className="payment">
-        <p className="payment-details">
-          Make payment to
-          <br />
-          Momo name: {serverDetails.momoName}
-          <br />
-          Momo number: {phoneNumberHashing(serverDetails.number)}
-        </p>
-        {!isCopied && (
-          <button className="copy" onClick={copyMomoNumber}>
-            <img src={copyIcon} alt="copy icon" />
-            <span>Copy</span>
-          </button>
-        )}
-        {isCopied && <p>Momo Number Copied!</p>}
-      </div>
+      <PaymentDetails serverDetails={serverDetails} />
     </div>
   );
 };
